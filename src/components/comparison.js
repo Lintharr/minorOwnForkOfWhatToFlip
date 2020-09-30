@@ -38,7 +38,7 @@ export const Comparison = ({ selectedLeague, comparison }) => {
       let chaosRatio = chaosProfit / chaosCost;
       chaosRatio = Math.round((chaosRatio + 0.00001) * 100) / 100; //don't look at me, this is how js has to handle rounding
       //https://www.reddit.com/r/pathofexiledev/comments/7aiil7/how_to_make_your_own_queries_against_the_official/
-      let mainLinkUrl = `https://www.pathofexile.com/api/trade/search/Metamorph?redirect&source={%22query%22:{%22${
+      let mainLinkUrl = `https://www.pathofexile.com/trade/search/Heist?q={%22query%22:{%22${
         comparison.poeApiItemType
       }%22:%22${comparison.base}%22}}`;
       let mainLinkHtml = ` [<a target="_blank" rel="noopener noreferrer" href="${mainLinkUrl}">goalLINK</a>]`;
@@ -46,7 +46,7 @@ export const Comparison = ({ selectedLeague, comparison }) => {
         items
       )} chaos${bEnd}, ${gStart}ratio: ${chaosRatio}${bEnd}${mainLinkHtml}, pieces: ${pieces}`;
       if (pieces === 1 || pieces > 2) {
-        let partItemUrl = `https://www.pathofexile.com/api/trade/search/Metamorph?redirect&source={%22query%22:{%22${
+        let partItemUrl = `https://www.pathofexile.com/trade/search/Heist?q={%22query%22:{%22${
           comparison.poeApiItemType
         }%22:%22${comparison.compare[0]}%22}}`;
         let partItemHtml = ` [<a target="_blank" rel="noopener noreferrer" href="${partItemUrl}">pieceLink</a>]`;
@@ -55,7 +55,7 @@ export const Comparison = ({ selectedLeague, comparison }) => {
       if (pieces === 2) {
         // text = text + ` [<em>${names.join(", ")}</em>]`;
         names.forEach(function(name, index) {
-          let itemUrl = `https://www.pathofexile.com/api/trade/search/Metamorph?redirect&source={%22query%22:{%22${
+          let itemUrl = `https://www.pathofexile.com/trade/search/Heist?q={%22query%22:{%22${
             comparison.poeApiItemType
           }%22:%22${name}%22}}`;
           let itemHtml = ` {<a target="_blank" rel="noopener noreferrer" href="${itemUrl}">link</a>}`;
