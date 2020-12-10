@@ -17,7 +17,7 @@ export const typeConfigByCategory = () => {
       fragments: {
         type: "Fragment",
         name_key: "currencyTypeName",
-        compare_key: "chaosEquivalent",
+        compare_key: "receive.value", //https://github.com/viktorgullmark/exilence-next/issues/295
       },
     },
     item: {
